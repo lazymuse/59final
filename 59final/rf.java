@@ -332,6 +332,10 @@ class Lobster {
   float y;
   float DX;
   float DY;
+ float right = width-200;
+  float left = -width/4;
+  float top = 60;
+
   
   Lobster() {
     DX= random(1,4);
@@ -339,18 +343,18 @@ class Lobster {
   }
   void lshow() {
     fill(0);
-    ellipse (x+200, surface+50+y, 40,20);
+    ellipse (x+200,y+surface+50, 40,20);
   }
   void lmove(){
     x = x+DX;
     y = y+DY;
     
-  if (x > one.tri ){
+  if (x > right || x < left){
      DX = -DX;
    }
-  // if (y > surface){
+   if (y > surface) {
      DY = -DY;
- // }
+  }
   
 }
 }
